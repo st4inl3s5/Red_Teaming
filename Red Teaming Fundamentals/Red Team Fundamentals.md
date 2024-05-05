@@ -186,7 +186,7 @@ Belgeyi incelerken bunun yalnızca bir özet olduğunu ve amacının hukuki bir 
 
 Örnek bir RoE :
 
-![roe.png](roe.png)
+![roe.png](img/roe.png)
 
     (TryHackMe'den alınmıştır.)
 
@@ -216,7 +216,7 @@ Kırmızı takımın, müşteri hedeflerine ulaşma sürecini anlatan teknik olm
 
 Örnek bir CONOPS :
 
-![conops.png](conops.png)
+![conops.png](img/conops.png)
 
     (TryHackMe'den alınmıştır.)
 
@@ -249,7 +249,7 @@ Kırmızı takımın başarılı olması için gerekli bilgi, kaynak ihtiyaçlar
 
 Örnek bir kaynak planı :
 
-![resource_plan.png](resource_plan.png)
+![resource_plan.png](img/resource_plan.png)
 
     (TryHackMe'den Alınmıştır.)
 
@@ -283,7 +283,7 @@ Yükümlülük planının genişletilmesidir. Her ayrıntının daha derine inil
 
 Örnek bir Operasyonlar Planı :
 
-![operations_plan.png](operations_plan.png)
+![operations_plan.png](img/operations_plan.png)
 
     (TryHackMe'den alınmıştır.)
 
@@ -319,7 +319,7 @@ Bu planın yazılma ve detaylandırma işlemi takıma bağlıdır.Bu dahili olar
 
 Örnek bir görev planı :
 
-![mission_plan.png](mission_plan.png)
+![mission_plan.png](img/mission_plan.png)
 
     (TryHackMe'den alınmıştır.)
 
@@ -383,7 +383,7 @@ Bu framework ile diğerleri arasındaki temel fark, kırmızı ekibin testine ya
 
 Bu framwork, kırmızı takım perspektifinden eyleme geçirilebilecek herhangi bir şeyden ziyade en iyi pratik uygulamayı kapsar.
 
-![tiber_eu.png](tiber_eu.png)
+![tiber_eu.png](img/tiber_eu.png)
 
     TryHackMe'den alınmıştır.
 
@@ -409,15 +409,15 @@ ATT&CK® framework yıllar içinde büyümüş ve genişlemiştir. Dikkate değe
 
 ATT&CK framework'ü kullanabilmek için websitesine gidelim : https://attack.mitre.org/
 
-![mitre_attack.png](mitre_attack.png)
+![mitre_attack.png](img/mitre_attack.png)
 
 Burada 14 tane farklı kategori olduğunu görebiliriz. Her kategori, düşmanların bugüne kadar uygulamış olduğu taktikleri yapmak için uygulanması gereken teknikleri gösterir. Her kategorinin teknikleri vardır. Bazı tekniklerin de alt teknikleri mevcuttur.(Bunları tekniğin yanında bulunan gri butona basarak görebiliriz.) Teknik hakkında bilgi almak istiyorsak üstüne tıklamamız yeterli. Örneğin Active Scanning tekniği :
 
-![mitre_attack_technique.png](mitre_attack_technique.png)
+![mitre_attack_technique.png](img/mitre_attack_technique.png)
 
 Ayrıca, aynı bilgiyi Navigator kullanarak görsel bir şekilde görebiliriz :
 
-![mitre_attack_navigator.png](mitre_attack_navigator.png)
+![mitre_attack_navigator.png](img/mitre_attack_navigator.png)
 
 #### CAR Framework
 
@@ -425,7 +425,7 @@ CAR'ın (Cyber Analytics Repository) resmi tanımı şu şekildedir: "MITRE Sibe
 
 Özetlemek gerekirse, CAR, bizi ATT&CK® çerçevesindeki Azaltma ve Tespit özetlerinden daha ileriye götürecek analitikleri bulmak için harika bir yerdir. Bu araç ATT&CK®'nin yerine geçmez ancak ek bir kaynaktır.
 
-![car.png](car.png)
+![car.png](img/car.png)
 
 #### ENGAGE Framework
 
@@ -439,7 +439,7 @@ Engage web sitesi, Düşmanlarla Yükümlülük Yaklaşımına 'başlamanız' i�
 
 Kendine özel bir matrix'i vardır :
 
-![engage.png](engage.png)
+![engage.png](img/engage.png)
 
 Bu kategorilerin her birini Engage web sitesindeki bilgilere dayanarak hızlıca açıklayalım.
 
@@ -457,11 +457,11 @@ D3FEND hala beta aşamasındadır ve NSA'nın Siber Güvenlik Direktörlüğü t
 
 D3FEND, Ağ Savunmasını Güçlendiren Tespit, Reddetme ve Kesinti Çerçevesi anlamına gelir.
 
-![d3fend.png](d3fend.png)
+![d3fend.png](img/d3fend.png)
 
 Herhangi bir eser'e tıkladığımızda örneğin : Application Configuration Hardening;
 
-![d3fend_artifact.png](d3fend_artifact.png)
+![d3fend_artifact.png](img/d3fend_artifact.png)
 
 Gördüğünüz gibi tekniğin ne olduğu (definition), tekniğin nasıl çalıştığı (how it works), tekniği uygularken dikkat edilmesi gerekenler (considerations) ve tekniğin nasıl kullanılacağı (example) hakkında bilgiler veriliyor.
 
@@ -481,15 +481,15 @@ CTID katılımcısı firma ve bayilerden bazıları:
 
 Web sitesine göre, "Katılımcı kuruluşlarla birlikte, daha güvenli bir dünya için çözümler geliştiriyor ve açık kaynaklı yazılım, metodolojiler ve frameworklerle tehdit bilgili savunmayı geliştiriyoruz. MITRE ATT&CK bilgi tabanını genişleterek, çalışmalarımız küresel anlayışı genişletiyor. Düşman davranışlarının ve hareketlerinin daha iyi anlaşılması için kritik önem taşıyan veri setlerinin kamuya açıklanmasıyla siber düşmanlar ve onların ticari becerilerini azaltıyoruz."
 
-![citd.png](citd.png)
+![citd.png](img/citd.png)
 
 Adversary Emulation Library(Düşman Emülasyon Kütüphanesi), düşman emülasyon planlarını mavi/kırmızı takım oyuncuları için ücretsiz bir kaynak haline getiren bir halk kütüphanesidir. Kütüphane ve emülasyonlar CTID'nin katkısıdır. Emülasyon planları, belirli tehdit grubunun nasıl taklit edileceğine ilişkin adım adım bir kılavuzdur. Eğer üst düzey yöneticilerden herhangi biri şunu sorsaydı, "APT29 bizi vurursa ne yaparız?" Bu, emülasyon planının yürütülmesinin sonuçlarına bakılarak kolayca cevaplanabilir.
 
-![adversary_emulation_library.png](adversary_emulation_library.png)
+![adversary_emulation_library.png](img/adversary_emulation_library.png)
 
 ### ATT&CK VS LOCKHEED MARTIN SİBER ÖLDÜRME ZİNCİRİ
 
-![attack_vs_lockheed.png](attack_vs_lockheed.png)
+![attack_vs_lockheed.png](img/attack_vs_lockheed.png)
 
 ## OPSEC (Operations Security) (Operasyonların Güvenliği)
 
@@ -503,7 +503,7 @@ OPSEC'in 5 önemli adımı vardır:
 + Riskleri belirlemek
 + Uygun karşı önlemleri uygulamak
 
-![opsec.png](opsec.png)
+![opsec.png](img/opsec.png)
 
 Düşman, ağını Nmap (bizim durumumuzda mavi takım) ile taradığımızı fark ederse, kullanılan IP adresini kolayca bulabilir. Örneğin, bir phishing sitesini barındırmak için aynı IP adresini kullanırsak, mavi ekibin iki olayı birbirine bağlaması ve bunları aynı aktöre atfetmesi çok zor olmayacaktır.
 
@@ -576,7 +576,7 @@ Güvenlik Açığı Analizi bölümünde sunduğumuz iki örneği tekrar gözden
 
 C2 frameworkleri çeşitli bileşenlerini anlamaya çalışırken korkutucu olabilir. Ancak öyle olmak zorunda değiller. En temel düzeyde bir C2 framework'ün ne olduğunu daha iyi anlamak için, birçok reverse shell'in aynı anda callback yapmasını (C2 agents/clients) yönetebilen bir Netcat dinleyicisini (C2 sunucusu) düşünün. Bu bir sunucu ama reverse sheller için. Netcat'in aksine neredeyse tüm C2 frameworkleri özel bir payload oluşturucu gerektirir. Bu genellikle framework'ün kendisinde yerleşik bir özelliktir. Örneğin Metasploit, kendi payload oluşturucusu MSFVenom'a sahip bir C2 framework'üdür.
 
-![c2.png](c2.png)
+![c2.png](img/c2.png)
 
 Peki C2 frameworklerini normal bir Netcat dinleyicisinden daha iyi kılan şey tam olarak nedir? Görünüşe göre sadece oturum yönetiminin Netcat'e uygulanması. Bu doğru olsa da, C2 frameworkleri “Sömürü Sonrası” (Post-Exploitation) özellikleriyle parlıyor.
 
@@ -584,7 +584,7 @@ Peki C2 frameworklerini normal bir Netcat dinleyicisinden daha iyi kılan şey t
 
 C2 (Komuta Kontrol) framework'ünü anlamak için öncelikle bir C2 sunucusunun çeşitli bileşenlerini anlayarak başlamalıyız. En önemli bileşenle başlayalım: C2 Sunucusunun kendisi. C2 Sunucusu, agents/clientlerin devamlı geri arayabileceği (callback) bir merkez görevi görür. Client'ler periyodik olarak C2 sunucusuna ulaşacak ve operatörün komutlarını bekleyecektir.
 
-![c2_server.png](c2_server.png)
+![c2_server.png](img/c2_server.png)
 
 ### C2 Clients ve Payloadlar
 
@@ -652,7 +652,7 @@ Normal bir reverse shell gibi, C2 frameworkünüzde kullanabileceğiniz iki teme
 
 Aşamasız payloadlar bu ikisinden en basit olanıdır; C2 client kodun tamamını içerirler ve C2 sunucusunu geri arayacak ve hemen beacon vermeye başlayacaklardır. Aşamasız payloadların nasıl çalıştığını daha iyi anlamak için aşağıdaki şemaya başvurabilirsiniz.
 
-![stageless_payload.png](stageless_payload.png)
+![stageless_payload.png](img/stageless_payload.png)
 
 Aşamasız bir payload ile C2 beacon adımları aşağıdaki gibidir:
 
@@ -663,7 +663,7 @@ Aşamasız bir payload ile C2 beacon adımları aşağıdaki gibidir:
 
 Aşamalı payloadlar, C2 client kodunun geri kalan kısımlarını indirmek için C2 sunucusuna geri çağrı yapılmasını gerektirir. Bu genellikle "Dropper(Damlalık)" olarak anılır çünkü aşamalı payloadın ikinci aşamasını indirmek için kurbanın makinesine "Bırakılır". Bu, aşamasız payloadlara göre tercih edilen bir yöntemdir çünkü C2 client kodunun geri kalan kısmını C2 sunucusundan almak için az miktarda kodun yazılması gerekir. Ayrıca, Anti-Virüs programlarını atlamak için kodu karmaşıklaştırmayı da kolaylaştırır.
 
-![staged_payload.png](staged_payload.png)
+![staged_payload.png](img/staged_payload.png)
 
 Aşamalı payload ile C2 beacon adımları aşağıdaki gibidir:
 
@@ -712,7 +712,7 @@ Sömürü soonrası modülleri, ilk etkileşim sonrası herhangi bir şeyle ilgi
 
 C2 framework'ünün son ana bileşenlerinden biri, C2 framework içindeki kısıtlı ağ bölümlerine erişimi kolaylaştıran döner modüllerdir. Bir sistemde Yönetici Erişiminiz varsa, bir makinenin SMB protokolü aracılığıyla proxy görevi görmesini sağlayan bir "SMB Beacon" açabilirsiniz. Bu, kısıtlı ağ kesimindeki makinelerin C2 sunucunuzla iletişim kurmasına olanak tanıyabilir.
 
-![pivoting.png](pivoting.png)
+![pivoting.png](img/pivoting.png)
 
 Yukarıdaki şema, kısıtlı bir ağ segmentindeki ana bilgisayarların C2 Sunucusunu nasıl geri aradığını gösterir:
 
@@ -725,7 +725,7 @@ Yukarıdaki şema, kısıtlı bir ağ segmentindeki ana bilgisayarların C2 Sunu
 
 Domain Fronting, bilinen, iyi bir host'u (örneğin) Cloudflare kullanır. Cloudflare, bant genişliğinden tasarruf etmek için HTTP bağlantı ayrıntılarına ilişkin gelişmiş ölçümlerin yanı sıra HTTP bağlantı isteklerini önbelleğe alan bir işletme yürütmektedir. Kırmızı takımcılar, bir client'in veya sunucunun bilinen, güvenilir bir IP Adresiyle iletişim kurduğunu göstermek için bunu kötüye kullanabilir. Coğrafi konum sonuçları, en yakın Cloudflare sunucusunun nerede olduğunu gösterecek ve IP Adresi, Cloudflare'in sahibi olarak gösterilecektir.
 
-![domain_fronting.png](domain_fronting.png)
+![domain_fronting.png](img/domain_fronting.png)
 
 Yukarıdaki şemada Domain Fronting'in nasıl çalıştığı gösterilmektedir:
 
@@ -739,7 +739,7 @@ Yukarıdaki şemada Domain Fronting'in nasıl çalıştığı gösterilmektedir:
 
 Bir sonraki teknik, "NGINX Ters(Reverse) Proxy", "Apache Mod_Proxy/Mod_Rewrite", "Biçimlendirilebilir(Malleable) HTTP C2 Profilleri" ve daha pek çok farklı ürün tarafından çeşitli adlarla anılır. Ancak hepsi aşağı yukarı aynıdır. Proxy özelliklerinin tamamı aşağı yukarı kullanıcının, gelen HTTP isteğinin belirli öğelerini kontrol etmesine olanak tanır. Diyelim ki gelen bir bağlantı isteğinin "X-C2-Server" başlığı var; kullanımınıza sunulan spesifik teknolojiyi (Reverse Proxy, Mod_Proxy/Rewrite, Malleable C2 Profile, vb.) kullanarak bu başlığı açıkça çıkarabilir ve C2 sunucunuzun C2 tabanlı yanıtlarla yanıt vermesini sağlayabiliriz. Oysa normal bir kullanıcı HTTP Sunucusunu sorguladığında genel bir web sayfası görebilir. Bunların hepsi yapılandırmanıza bağlıdır.
 
-![c2_profiles.png](c2_profiles.png)
+![c2_profiles.png](img/c2_profiles.png)
 
 Yukarıdaki şemada C2 profillerinin nasıl çalıştığı gösterilmektedir:
 
@@ -767,31 +767,31 @@ Premium C2 frameworkleri genellikle daha gelişmiş post-exploitation modüllere
 
 Rapid7 tarafından geliştirilen ve sürdürülen Metasploit Framework, halka açık olan ve çoğu penetrasyon testi dağıtımına yüklenen en popüler Sömürü ve Sömürü Sonrası frameworklerden (C2) biridir.
 
-![metasploit.png](metasploit.png)
+![metasploit.png](img/metasploit.png)
 
 + Armitage
 
 Armitage, Metasploit framework'ünün bir uzantısıdır; bir Grafik kullanıcı arayüzü ekler, Java ile yazılmıştır ve Cobalt Strike'a inanılmaz derecede benzer. Bunun nedeni her ikisinin de Raphael Mudge tarafından geliştirilmiş olmasıdır. Armitage, tüm hedeflerinizi enumerate ve görselleştirmenin kolay bir yolunu sunar. Cobalt Strike'a çok benzemesinin yanı sıra bazı benzersiz özellikler bile sunuyor. En popülerlerinden biri “Saldırılar” menüsünde bulunabilir; Bu özellik, belirli bir iş istasyonunda çalışan hizmetlere yönelik tüm açıkları çalıştırmayı deneyen Hail Mary saldırısı olarak bilinir. Armitage gerçekten “Hızlı ve Kolay Hackleme”dir.
 
-![armitage.png](armitage.png)
+![armitage.png](img/armitage.png)
 
 + Powershell Empire/Starkiller
 
 Powershell Empire ve Starkiller, orijinal olarak Veris Group'tan Harmjoy, Sixdub ve Enigma0x3 tarafından oluşturulan inanılmaz derecede popüler bir başka C2'dir. Şu anda proje durduruldu ve BC Güvenlik ekibi (Cx01N, Hubbl3 ve _Vinnybod) tarafından ele alındı. Empire, birden fazla platformla uyumlu çeşitli dillerde yazılmış client kodlarına sahiptir ve bu da onu inanılmaz derecede çok yönlü bir C2 haline getirir.
 
-![powershell_empire.png](powershell_empire.png)
+![powershell_empire.png](img/powershell_empire.png)
 
 + Covenant
 
 Şu ana kadar C# ile yazılmış en benzersiz C2 frameworklerinden biridir. Metasploit/Armitage'dan farklı olarak, öncelikle son derece özelleştirilebilir client kodlarına sahip HTTP, HTTPS ve SMB dinleyicileriyle kullanım sonrası ve yanal hareket için kullanılır.
 
-![covenant.png](covenant.png)
+![covenant.png](img/covenant.png)
 
 + Sliver
 
 Sliver by Bishop Fox, gelişmiş, son derece özelleştirilebilir, çok kullanıcılı, CLI tabanlı bir C2 framework'tür. Go ile yazılmıştır, bu da C2 "implantlarının" tersine mühendisliğini inanılmaz derecede zorlaştırır. WireGuard, mTLS, HTTP(S), DNS ve çok daha fazlası gibi C2 iletişimleri için çeşitli protokolleri destekler. Ek olarak, ek işlevsellik için BOF dosyalarını, C2 iletişimlerini maskelemek için DNS Canary Domains'i, HTTPS beaconları için otomatik Let's Encrypt sertifikası oluşturmayı ve çok daha fazlasını destekler.
 
-![sliver.png](sliver.png)
+![sliver.png](img/sliver.png)
 
 #### Ücretli C2 Frameworkleri
 
@@ -799,17 +799,16 @@ Sliver by Bishop Fox, gelişmiş, son derece özelleştirilebilir, çok kullanı
 
 Help Systems tarafından geliştirilen Kobalt Saldırısı (Daha önce Raphael Mudge tarafından yaratılmıştı) tartışmasız Metasploit'in yanındaki en ünlü Komuta ve Kontrol frameworklerinden biridir. Artimage'e çok benzer şekilde Java ile yazılmış ve mümkün olduğunca esnek olacak şekilde tasarlanmıştır.
 
-![cobalt_strike.png](cobalt_strike.png)
+![cobalt_strike.png](img/cobalt_strike.png)
 
 + Brute Ratel
 
 Chetan Nayak veya Paranoid Ninja tarafından geliştirilen Brute Ratel, benzersiz bir C2 framework olarak gerçek bir düşman simülasyonu benzeri deneyim sağlayan, "Özelleştirilebilir Komuta ve Kontrol Merkezi" veya "C4" framework'ü olarak pazarlanan bir Komuta ve Kontrol frameworküdür. Framework hakkında daha fazla bilgi için yazar, framework içindeki yeteneklerin çoğunu gösteren bir Video Eğitim Sayfası sağlamıştır.
 
-![brute_ratel.png](brute_ratel.png)
+![brute_ratel.png](img/brute_ratel.png)
 
 #### Diğer C2 Frameworkleri
 
 C2 frameworkleri ve bunların yeteneklerinin daha kapsamlı bir listesi için Jorge Orchilles ve Bryson Bort tarafından yürütülen bir proje olan “C2 Matrisi”ne göz atın. Şu anda mevcut olan hemen hemen tüm C2 frameworklerinin çok daha kapsamlı bir listesine sahiptir.
 
 https://howto.thec2matrix.com/
-
