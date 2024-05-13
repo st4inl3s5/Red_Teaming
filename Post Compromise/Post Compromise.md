@@ -200,3 +200,136 @@ Her ikisi de kullanıcıları ve bilgisayarları sınıflandırmak için kullan�
 
 + Organizational Unit, kuruluştaki belirli rollerine bağlı olarak kullanıcı kümeleriyle ilgili belirli yapılandırmaları içeren kullanıcılara ve bilgisayarlara ilkeler uygulamak için kullanışlıdır. Tek bir kullanıcıya iki farklı politika kümesi uygulamaya çalışmanın mantıklı olmayacağından, bir kullanıcının aynı anda yalnızca tek bir organizational unit üyesi olabileceğini unutmayın.
 + Güvenlik Grupları ise kaynaklar üzerinde izin vermek için kullanılır. Örneğin, bazı kullanıcıların paylaşılan bir klasöre veya ağ yazıcısına erişmesine izin vermek istiyorsanız grupları kullanacaksınız. Bir kullanıcı, birden fazla kaynağa erişim izni vermek için gerekli olan birçok grubun parçası olabilir.
+
+#### Active Directory'de Kullanıcıları Düzenlemek
+
+Yeni domain yöneticisi olarak ilk göreviniz, işletmede yakın zamanda bazı değişiklikler meydana geldiğinden mevcut AD OU'ları ve kullanıcıları kontrol etmektir. Size aşağıdaki organizasyon şeması verilmiştir ve AD'de buna uygun değişiklikler yapmanız beklenmektedir:
+
+![manage_ad.png](img/manage_ad.png)
+
+Dikkat etmeniz gereken ilk şey, mevcut AD yapılandırmanızda grafikte görünmeyen ek bir departman Organizational Unit olmasıdır. Bütçe kesintileri nedeniyle kapatıldığı ve domainden kaldırılması gerektiği söylendi. Organizational Unit'e sağ tıklayıp silmeye çalışırsanız aşağıdaki hatayı alırsınız:
+
+![manage_add1.png](img/manage_ad1.png)
+
+Varsayılan olarak Organizational Unitler yanlışlıkla silinmeye karşı korunur. OU'yu silmek için Görünüm menüsünde Gelişmiş Özellikler'i etkinleştirmemiz gerekir:
+
+![manage_ad2.png](img/manage_ad3.png)
+
+Bu size bazı ek kapsayıcılar gösterecek ve yanlışlıkla silme korumasını devre dışı bırakmanıza olanak tanıyacaktır. Bunu yapmak için OU'a sağ tıklayın ve Özellikler'e gidin. Korumayı devre dışı bırakmak için Nesne sekmesinde bir onay kutusu bulacaksınız:
+
+![manage_ad3.png](img/manage_ad2.png)
+
+Kutunun işaretini kaldırdığınızdan emin olun ve OU'yu silmeyi tekrar deneyin. OU'yu silmek istediğinizi onaylamanız istenecektir ve bunun sonucunda, OU altındaki tüm kullanıcılar, gruplar veya OU de silinecektir.
+
+AD'de yapabileceğiniz güzel şeylerden biri, belirli kullanıcılara bazı OU'lar üzerinde biraz kontrol vermektir. Bu işlem, yetki verme(delegation) olarak bilinir ve bir Domain Yöneticisinin devreye girmesine gerek kalmadan, OU'da gelişmiş görevleri gerçekleştirmeleri için kullanıcılara belirli ayrıcalıklar vermenizi sağlar.
+
+Bunun en yaygın kullanım durumlarından biri, IT desteğine diğer düşük ayrıcalıklı kullanıcıların parolalarını sıfırlama ayrıcalıklarının verilmesidir. Organizasyon şemamıza göre Phillip, IT desteğinden sorumludur; bu nedenle, Satış, Pazarlama ve Yönetim OU'ları üzerindeki parolaların sıfırlanması kontrolünü muhtemelen ona devretmek isteriz.
+
+Bu örnekte, Satış OU'sunun kontrolünü Phillip'e devredeceğiz. Bir OU üzerinde denetim yetkisi vermek için, OU'ya sağ tıklayıp Denetimi Delege Et'i seçebilirsiniz:
+
+![manage_ad4.png](img/manage_ad4.png)
+
+Bu, kontrolü devretmek istediğiniz kullanıcıların ilk olarak sorulacağı yeni bir pencere açmalıdır:
+
+Not: Kullanıcı adının yanlış yazılmasını önlemek için "phillip" yazıp Adları Kontrol Et butonuna tıklayın. Windows kullanıcıyı sizin için otomatik olarak tamamlayacaktır.
+
+![manage_ad5.png](img/manage_ad5.png)
+
+Tamam'a tıklayın ve bir sonraki adımda aşağıdaki seçeneği seçin:
+
+![manage_ad6.png](img/manage_ad6.png)
+
+Birkaç kez ileri'ye tıklayın; artık Phillip, satış departmanındaki herhangi bir kullanıcının şifrelerini sıfırlayabilecektir.
+
+Şimdi Phillip'in hesabını kullanarak Sophie'nin şifresini sıfırlamayı deneyelim.
+
+Phillip'in yeni güçlerini denemek ve test etmek için Active Directory Kullanıcıları ve Bilgisayarları'na gitme cazip gelse de, onun bu yetkileri açma ayrıcalıkları yoktur, bu nedenle parola sıfırlama işlemi yapmak için başka yöntemler kullanmanız gerekecektir. Bu durumda bunu yapmak için Powershell'i kullanacağız:
+
+![manage_ad7.png](img/manage_ad7.png)
+
+Sophie'nin bildiğimiz bir parolayı kullanmaya devam etmesini istemediğimizden, aşağıdaki komutla bir sonraki oturum açmada parolanın sıfırlanmasını da zorlayabiliriz:
+
+![manage_ad8.png](img/manage_ad8.png)
+
+#### Active Directory'de Bilgisayarları Düzenlemek
+
+Varsayılan olarak, bir domain'e katılan tüm makineler (DC'ler hariç) "Bilgisayarlar" adı verilen kapsayıcıya konulacaktır. DC'mizi kontrol edersek bazı cihazların zaten orada olduğunu göreceğiz:
+
+![manage_ad9.png](img/manage_ad9.png)
+
+Ağımızdaki kullanıcılara karşılık gelen bazı sunucuları, bazı dizüstü bilgisayarları ve bazı PC'leri görebiliriz. Sunucularınızın ve normal kullanıcıların günlük olarak kullandığı makinelerinizin farklı politikalara sahip olmasını istemeniz çok muhtemel olduğundan, tüm cihazlarımızın orada olması pek iyi bir fikir değildir.
+
+Makinelerinizi nasıl organize edeceğiniz konusunda altın bir kural olmasa da, cihazları kullanımlarına göre ayırmak mükemmel bir başlangıç ​​noktasıdır. Genel olarak cihazların en az aşağıdaki üç kategoriye ayrıldığını görmeyi beklersiniz:
+
+1. İş İstasyonları (Workstation)
+
+İş istasyonları, Active Directory domain'deki en yaygın cihazlardan biridir. Domaindeki her kullanıcı büyük olasılıkla bir iş istasyonunda oturum açacaktır. Bu, işlerini veya normal tarama etkinliklerini gerçekleştirmek için kullanacakları cihazdır. Bu cihazlarda asla ayrıcalıklı bir kullanıcının oturum açmaması gerekir.
+
+2. Sunucular (Servers)
+
+Sunucular, Active Directory domaini içindeki en yaygın ikinci cihazdır. Sunucular genellikle kullanıcılara veya diğer sunuculara hizmet sağlamak için kullanılır.
+
+3. Domain Controller'ları
+
+Domain Controller'ları, bir Active Directory domain içindeki en yaygın üçüncü aygıttır. Domain Controller'ları, Active Directory domainini yönetmenize olanak tanır. Bu cihazlar, ortamdaki tüm kullanıcı hesapları için hashlenmiş şifreler içerdikleri için genellikle ağdaki en hassas cihazlar olarak kabul edilir.
+
+AD'mizi düzenlediğimize göre, İş İstasyonları ve Sunucular için iki ayrı OU oluşturalım (Domain Controller'ları zaten Windows tarafından oluşturulan bir OU'dadır). Bunları doğrudan thm.local domain kapsayıcısının altında oluşturacağız. Sonunda aşağıdaki OU yapısına sahip olacağız:
+
+![manage_ad10.png](img/manage_ad10.png)
+
+#### Grup İlkeleri (Group Policies)
+
+Şimdiye kadar kullanıcıları ve bilgisayarları OU'lar ile düzenledik, ancak bunun arkasındaki ana fikir her OU için ayrı ayrı farklı politikalar uygulayabilmektir. Bu şekilde, departmanlarına bağlı olarak kullanıcılara farklı konfigürasyonlar ve güvenlik temelleri sunabiliyoruz.
+
+Windows bu tür ilkeleri Grup İlkesi Nesneleri (Group Policy Objects) (GPO) aracılığıyla yönetir. GPO'lar yalnızca OU'lara uygulanabilecek bir ayarlar koleksiyonudur. GPO'lar, kullanıcıları veya bilgisayarları hedef alan ilkeler içerebilir ve belirli makineler ve kimlikler için bir temel belirlemenize olanak tanır.
+
+GPO'ları yapılandırmak için başlat menüsünde bulunan Grup İlkesi Yönetimi aracını kullanabilirsiniz:
+
+![manage_ad11.png](img/manage_ad11.png)
+
+Açtığınızda göreceğiniz ilk şey, daha önce tanımlandığı gibi tam OU hiyerarşinizdir. Grup İlkelerini yapılandırmak için önce Grup İlkesi Nesneleri altında bir GPO oluşturursunuz ve ardından bunu ilkelerin uygulanmasını istediğiniz OU'ya bağlarsınız. Örnek olarak, makinenizde halihazırda mevcut bazı GPO'ların bulunduğunu görebilirsiniz:
+
+![manage_ad12.png](img/manage_ad12.png)
+
+Yukarıdaki görselde 3 adet GPO’nun oluşturulduğunu görüyoruz. Bunlardan, Varsayılan Domain İlkesi (Default Domain Policy) ve RDP İlkesi (RDP Policy) bir bütün olarak thm.local domainine bağlanır ve Varsayılan Domain Controller İlkesi (Default Domain Controller Policy) yalnızca Domain Controller OU'suna bağlanır. Akılda tutulması gereken önemli bir nokta, herhangi bir GPO'nun bağlı OU'ya ve onun altındaki tüm alt OU birimlerine uygulanacağıdır. Örneğin, Satış OU'su Varsayılan Domain İlkesinden etkilenmeye devam edecektir.
+
+Bir GPO'nun içinde ne olduğunu görmek için Varsayılan Domain İlkesini inceleyelim. Bir GPO seçerken göreceğiniz ilk sekme, GPO'nun AD'ye bağlandığı yer olan kapsamını(Scope) gösterir. Mevcut ilkenin yalnızca thm.local domainine bağlı olduğunu görebiliriz:
+
+![manage_ad13.png](img/manage_ad13.png)
+
+Gördüğünüz gibi, GPO'lara Güvenlik Filtrelemesi uygulayarak bunların yalnızca bir OU altındaki belirli kullanıcılara/bilgisayarlara uygulanmasını sağlayabilirsiniz. Varsayılan olarak tüm kullanıcıları/PC'leri içeren Kimliği Doğrulanmış Kullanıcılar grubuna uygulanacaktır.
+
+Ayarlar sekmesi GPO'nun gerçek içeriğini içerir ve hangi spesifik yapılandırmaların uygulandığını bize bildirir. Daha önce belirtildiği gibi, her GPO'nun yalnızca bilgisayarlara uygulanan yapılandırmaları ve yalnızca kullanıcılara uygulanan yapılandırmaları vardır. Bu durumda, Varsayılan Domain İlkesi yalnızca Bilgisayar Yapılandırmalarını içerir:
+
+![manage_ad14.png](img/ad_manage13.png)
+
+Bu GPO tüm domain için geçerli olduğundan, üzerinde yapılacak herhangi bir değişiklik tüm bilgisayarları etkileyecektir. Kullanıcıların şifrelerinde en az 10 karakter olmasını zorunlu kılmak için minimum şifre uzunluğu politikasını değiştirelim. Bunu yapmak için GPO'ya sağ tıklayın ve Düzenle'yi seçin:
+
+Bu, mevcut tüm yapılandırmalarda gezinebileceğimiz ve düzenleyebileceğimiz yeni bir pencere açacaktır. Minimum parola uzunluğunu değiştirmek için Bilgisayar Yapılandırmaları -> İlkeler -> Windows Ayarları -> Güvenlik Ayarları -> Hesap İlkeleri -> Parola İlkesi'ne gidin ve gerekli ilke değerini değiştirin:
+
+![manage_ad14.png](img/manage_ad14.png)
+
+Gördüğünüz gibi bir GPO'da pek çok politika oluşturulabilir. Her birini tek bir bölümde açıklamak imkansız olsa da, bazı politikaların basit olması nedeniyle biraz araştırma yapmaktan çekinmeyin. Politikalardan herhangi biri hakkında daha fazla bilgiye ihtiyaç duyulursa, bunlara çift tıklayıp her birinin üzerindeki Açıklama sekmesini okuyabilirsiniz:
+
+![manage_ad15.png](img/manage_ad15.png)
+
+GPO'lar, DC'de depolanan SYSVOL adı verilen bir ağ paylaşımı aracılığıyla ağa dağıtılır. Bir domaindeki tüm kullanıcıların, GPO'larını düzenli aralıklarla senkronize etmek için genellikle ağ üzerinden bu paylaşıma erişimi olmalıdır. SYSVOL paylaşımı varsayılan olarak ağımızdaki DC'lerin her birinde bulunan C:\Windows\SYSVOL\sysvol\ dizinini işaret eder.
+
+Herhangi bir GPO'da değişiklik yapıldığında bilgisayarların bu değişikliği karşılaması 2 saate kadar sürebilir. Belirli bir bilgisayarı GPO'larını hemen eşitlemeye zorlamak istiyorsanız istediğiniz bilgisayarda her zaman aşağıdaki komutu çalıştırabilirsiniz:
+
+    PS C:\> gpupdate /force
+
+Yeni işimizin bir parçası olarak, aşağıdakileri yapmamıza olanak sağlayacak bazı GPO'ları uygulamakla görevlendirildik:
+
++ IT dışı kullanıcıların Kontrol Paneline erişmesini engelleyin.
++ İnsanların oturumlarını açıkta bırakmasını önlemek için, iş istasyonlarının ve sunucuların, kullanıcı 5 dakika boyunca herhangi bir işlem yapılmadığında ekranlarını otomatik olarak kilitlemesini sağlayın.
+
+Bunların her birine odaklanalım ve her bir GPO'da hangi politikaları etkinleştirmemiz gerektiğini ve bunların nereye bağlanması gerektiğini tanımlayalım.
+
+__Kontrol Paneli'ne Erişim Engeli__
+
+Tüm makinelerdeki Kontrol Paneline erişimi yalnızca IT departmanının parçası olan kullanıcılarla sınırlamak istiyoruz. Diğer departmanların kullanıcıları sistem tercihlerini değiştirememelidir.
+
+Restrict Control Panel Access adında yeni bir GPO oluşturalım ve onu düzenleme için açalım. Bu GPO'nun belirli kullanıcılara uygulanmasını istediğimizden, Kullanıcı Yapılandırması altında aşağıdaki politikayı arayacağız:
+
+![manage_ad16.png](img/manage_ad16.png)
